@@ -55,7 +55,7 @@ ROOT_URLCONF = 'form_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['form_app',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'form_app',
         'USER': 'root',
-        'PASSWORD':'root',
+        'PASSWORD':'',
         'PORT':'3306',
         'HOST':'127.0.0.1',
     }

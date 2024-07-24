@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if log_list %}
+{% for item in log_list %}
+{{ item.address }}<br>
+{% endfor %}
+{% else %}
+<p>No login info</p>
+{% endif %}
+{% endblock %}
