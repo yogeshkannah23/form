@@ -7,5 +7,6 @@ urlpatterns = [
     path('',views.index,name="index"),
     path('login/',views.Login_page.as_view(),name = "login"),
     path('thank_you/',views.Thank_youView.as_view(),name= 'thank_you'),
-    path('login_list/',views.Login_lists.as_view(),name='login_list'),
+    path('login_list/',views.Login_listsView.as_view(),name='login_list'),
+    path('single_view/<int:pk>',views.Login_single_View.as_view(),name='single_view'),
 ]

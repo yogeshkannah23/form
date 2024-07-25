@@ -6,7 +6,7 @@ from django.views import View
 from form_app.form import *
 from django.views.generic.edit import CreateView 
 from django.views.generic.base import TemplateView
-from django.views.generic import ListView
+from django.views.generic import ListView,DetailView
 # Create your views here.
 
 def index(request):
@@ -48,6 +48,29 @@ class Thank_youView(TemplateView):
 #         context['login_list'] = login_list
 #         return context
     
-class Login_lists(ListView):
-    template_name = 'login_list.html'
+class Login_listsView(ListView):
+    template_name = 'login_list.html'                        
     model = Login
+    context_object_name = "object_list"
+
+# class Login_single_View(TemplateView):
+#     template_name = 'single_view.html'
+
+#     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+#         context = super().get_context_data(**kwargs)
+#         id=kwargs['id']
+#         single_view = Login.objects.get(pk=id)
+#         context['single_view'] = single_view
+#         return context
+
+class Login_single_View(DetailView):
+    template_name = 'single_view.html'
+    model = Login
+    context_object_name = "object_list"
+    # def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
+    #     context = super().get_context_data(**kwargs)
+    #     id=kwargs['id']
+    #     single_view = Login.objects.get(pk=id)
+    #     context['single_view'] = single_view
+    #     return context
+

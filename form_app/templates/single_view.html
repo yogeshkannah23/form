@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-{% if single_view %}
-{% for item in single_view %}
-{{ item.address }}<br>
-{% endfor %}
+{% if object_list %}
+
+{{ object_list.address }}<br>
+
 {% else %}
 <p>No login info</p>
 {% endif %}
