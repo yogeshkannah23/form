@@ -74,3 +74,9 @@ class Login_single_View(DetailView):
     #     context['single_view'] = single_view
     #     return context
 
+def cookies_demo(request):
+    count = request.COOKIES.get('count',0)
+    total_count = int(count) + 1
+    response = render(request,'cooky_count.html',{'count':total_count})
+    response.set_cookie('count',total_count)
+    return response
